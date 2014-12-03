@@ -45,7 +45,6 @@ import com.ptr.folding.FoldingPaneLayout;
 public class FoldingPaneLayoutActivity extends ActionBarActivity {
 
 	private FoldingPaneLayout mPaneLayout;
-	private ListView mPaneList;
 	private CharSequence mTitle;
 	private String[] mAnimalTitles;
 	private ItemSelectedListener mItemSelectedListener;
@@ -57,24 +56,19 @@ public class FoldingPaneLayoutActivity extends ActionBarActivity {
 
 		mAnimalTitles = getResources().getStringArray(R.array.animal_array);
 		mPaneLayout = (FoldingPaneLayout) findViewById(R.id.drawer_layout);
-		mPaneList = (ListView) findViewById(R.id.left_drawer);
 
 		mItemSelectedListener = new ItemSelectedListener();
 
 		mPaneLayout.getFoldingLayout().setBackgroundColor(Color.BLACK);
 
 		// set up the drawer's list view with items and click listener
-		mPaneList.setAdapter(new ArrayAdapter<String>(this,
-				R.layout.drawer_list_item, mAnimalTitles));
-		mPaneList.setOnItemClickListener(new DrawerItemClickListener());
-
 		// enable ActionBar app icon to behave as action to toggle nav drawer
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setHomeButtonEnabled(true);
 
-		if (savedInstanceState == null) {
-			selectItem(0);
-		}
+//		if (savedInstanceState == null) {
+//			selectItem(0);
+//		}
 	}
 
 	@Override
@@ -145,7 +139,6 @@ public class FoldingPaneLayoutActivity extends ActionBarActivity {
 				.replace(R.id.content_frame, fragment).commit();
 
 		// update selected item and title, then close the drawer
-		mPaneList.setItemChecked(position, true);
 		setTitle(mAnimalTitles[position]);
 		mPaneLayout.closePane();
 	}

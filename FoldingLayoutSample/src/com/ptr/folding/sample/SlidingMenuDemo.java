@@ -1,0 +1,13 @@
+package com.ptr.folding.sample;
+
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+
+public class SlidingMenuDemo extends ActionBarActivity{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.sliding_menu_activity_pane);
+    }
+}

@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Ptr">
         
               <activity
-            android:name=".MainActivity"
+            android:name=".SlidingMenuDemo"
             android:label="@string/title_activity_main" >
              <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
